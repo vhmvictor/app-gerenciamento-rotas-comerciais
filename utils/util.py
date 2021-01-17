@@ -147,17 +147,25 @@ def findExistedClient(geo: types.List[float], client_id: int):
     if client_id:
         query = "select id, nome, geolocalizacao, rota_id from cliente where id=%s and data_deletacao is null"
         cur.execute(query,[client_id])
-        items = cur.fetchall()
+        result_id = cur.fetchall()
         
-        if not items:
-             raise HTTPException(status_code=400, detail="Operation failed. Client not found!!")
+        if not result_id:
+             raise HTTPException(status_code=404, detail="Operation failed. Client not found!!")
+        
+        for row in result_id:
+                items.append({'id': row[0], 'nome': row[1], 'geolocalizacao': row[2], 'rota_id': row[3]})
     else:
-        query = "select id, nome, geolocalizacao, rota_id from cliente where geolocalizacao='{%s, %s}' and data_deletacao is null"
-        cur.execute(query,[geo[0], geo[1]])
-        result = cur.fetchall()
 
-        for row in result:
-            items.append({'id': row[0], 'nome': row[1], 'geolocalizacao': row[2], 'rota_id': row[3]})
+        try:
+            query = "select id, nome, geolocalizacao, rota_id from cliente where geolocalizacao='{%s, %s}' and data_deletacao is null"
+            cur.execute(query,[geo[0], geo[1]])
+            result = cur.fetchall()
+
+            for row in result:
+                items.append({'id': row[0], 'nome': row[1], 'geolocalizacao': row[2], 'rota_id': row[3]})
+
+        except:
+            raise HTTPException(status_code=400, detail="Operation failed. Invalid geolocation!")
 
     return items
 
@@ -186,6 +194,20 @@ def findClientContainsRoute(geo: types.List[float]):
          "rota_id": rota_id,
          "vendedor_id": vendedor_id
     }
+
+# LOGS FUNCTIONS
+
+def create_log(acao, entidade, usuario_id, usuario_nome, registro):
+    gDate = datetime.now()
+
+    cur = connection_db.cur
+    conn = connection_db.conn
+
+    cur.execute("INSERT INTO log (acao, entidade, usuario_id, usuario_nome, registro, data_criacao) VALUES(%s, %s, %s, %s, %s, %s)", (
+        acao, entidade, usuario_id, usuario_nome, registro, gDate))
+    conn.commit()
+
+    print("Log criado")
 
 # UTILS FUNCTIONS 
 def hashed_password(password):

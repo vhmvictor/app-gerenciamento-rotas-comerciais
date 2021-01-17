@@ -6,9 +6,8 @@ from datetime import datetime
 router = APIRouter()
 
 # Endpoint Vendedores - Apenas adms podem acessar
-@router.get("/vendedores/listar/", tags=["Vendedores"])
+@router.get("/vendedores", tags=["Vendedores"])
 def listar_vendedores(current_user: models.UsuarioResposta = Depends(util.get_current_user)):
-    ressult = []
     items = []
 
     cur = connection_db.cur
@@ -21,7 +20,7 @@ def listar_vendedores(current_user: models.UsuarioResposta = Depends(util.get_cu
         
     return items
 
-@router.post("/vendedores/criar/", response_model=models.Vendedor, tags=["Vendedores"])
+@router.post("/vendedores", response_model=models.Vendedor, tags=["Vendedores"])
 def criar_vendedor(vendedor: models.Vendedor, current_user: models.UsuarioResposta = Depends(util.get_current_user)):
     sellDB = util.findExistedSeller(vendedor.email)
     if sellDB:
@@ -36,11 +35,13 @@ def criar_vendedor(vendedor: models.Vendedor, current_user: models.UsuarioRespos
         vendedor.nome, vendedor.email, gDate))
     conn.commit()
 
+    util.create_log("Criação", "vendedor", current_user.id , current_user.email, vendedor.email)
+
     return {
         **vendedor.dict()
     }
 
-@router.delete("/vendedores/deletar/{id}", tags=["Vendedores"])
+@router.delete("/vendedores/{id}", tags=["Vendedores"])
 def deletar_vendedor(id: int, current_user: models.UsuarioResposta = Depends(util.get_current_user)):
     cur = connection_db.cur
     query = "select * from vendedor where id=%s"
@@ -58,8 +59,9 @@ def deletar_vendedor(id: int, current_user: models.UsuarioResposta = Depends(uti
     query = "UPDATE vendedor SET data_deletacao=%s WHERE id=%s"
 
     cur.execute(query,[gDate, id])
-
     conn.commit()
+
+    util.create_log("Deletação", "vendedor", current_user.id , current_user.email, result[0][2])
 
     return {
         "Successful operation. Delete seller!"

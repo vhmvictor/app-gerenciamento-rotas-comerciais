@@ -128,6 +128,8 @@ def criar_cliente(cliente: models.Cliente):
         cur.execute("INSERT INTO cliente (nome, geolocalizacao, rota_id, vendedor_id, data_criacao) VALUES(%s, %s, %s, %s, %s)", (
         cliente.nome, cliente.geolocalização, 1, None, gDate))
         conn.commit()
+    
+    util.create_log("Criação", "cliente", None, None, cliente.nome)
 
     return {
         **cliente.dict(),
@@ -155,11 +157,13 @@ def editar_cliente(id: int, cliente: models.Cliente):
         cur.execute(query, [cliente.nome, cliente.geolocalização, 1, None, gDate, id])
         conn.commit()
 
+    util.create_log("Edição", "cliente", None, None, cliente.nome)
+
     return {
         **cliente.dict(),
     }
 
-@router.delete("/clientes{id}", tags=["Clientes"])
+@router.delete("/clientes/{id}", tags=["Clientes"])
 def deletar_cliente(id: int):
     clientDB = util.findExistedClient([], id)
 
@@ -177,6 +181,10 @@ def deletar_cliente(id: int):
 
     conn.commit()
 
+    #util.create_log("Deletacão", "cliente", None, None, clientDB[0].get('nome'))
+
     return {
         "Successful operation. Delete client!"
     }
+
+    

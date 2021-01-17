@@ -34,6 +34,8 @@ def criar_rota(rota: models.Rota, current_user: models.UsuarioResposta = Depends
         rota.bounds, rota.nome, gDate))
     conn.commit()
 
+    util.create_log("Criação", "rota", current_user.id , current_user.email, rota.nome)
+
     return {
         **rota.dict()
     }
@@ -56,21 +58,22 @@ def editar_rota(id: int, rota: models.Rota, current_user: models.UsuarioResposta
     cur.execute(query,[rota.bounds, rota.nome, gDate, id])
     conn.commit()
 
+    util.create_log("Edição", "rota", current_user.id , current_user.email, rota.nome)
+
     return {
         **rota.dict()
     }
 
 @router.delete("/rotas/{id}", tags=["Rotas"]) 
 def deletar_rota(id: int, current_user: models.UsuarioResposta = Depends(util.get_current_user)):
-    rotaDB = util.findExistedRoute(id)
-    
-    if not rotaDB:
+    routeDB = util.findExistedRoute(id)
+    if not routeDB:
         raise HTTPException(status_code=404, detail="Operation failed. Route not found!")
+    
+    seller_route = routeDB[0].get('vendedor_id')
 
-    saller_route = rotaDB[0].get('vendedor_id')
-
-    if saller_route:
-        raise HTTPException(status_code=404, detail="Operation failed. Exist a seller associated with this route!")
+    if seller_route:
+        raise HTTPException(status_code=400, detail="Operation failed. Exist a seller associated with this route!")
 
     cur = connection_db.cur
     conn = connection_db.conn
@@ -81,15 +84,17 @@ def deletar_rota(id: int, current_user: models.UsuarioResposta = Depends(util.ge
     cur.execute(query,[gDate, id])
     result = conn.commit()
 
+    util.create_log("Edição", "rota", current_user.id , current_user.email, routeDB[0].get('nome'))
+
     return {
         "Successful operation. Delete route!"
     }
 
 @router.put("/rotas/{rota_id}/associar_vendedor/{vendedor_id}", tags=["Rotas"])
 def associar_vendedor_rota(rota_id: int, vendedor_id: int, current_user: models.UsuarioResposta = Depends(util.get_current_user)):
-    rotaDB = util.findExistedRoute(rota_id)
+    routeDB = util.findExistedRoute(rota_id)
     
-    if not rotaDB:
+    if not routeDB:
         raise HTTPException(status_code=404, detail="Operation failed. Route not found!")
 
     sellerDB = util.findExistedSellerById(vendedor_id)
@@ -114,17 +119,17 @@ def associar_vendedor_rota(rota_id: int, vendedor_id: int, current_user: models.
     cur.execute(query,[vendedor_id, gDate, rota_id])
     conn.commit()
 
+    util.create_log("Associação Vendedor", "rota", current_user.id , current_user.email, routeDB[0].get('nome'))
+
     return {
         "Successful operation. Seller associated with route!"
     }
 
 @router.put("/rotas/{rota_id}/desassociar_vendedor/{vendedor_id}", tags=["Rotas"])
 def desassociar_vendedor_rota(rota_id: int, vendedor_id: int, current_user: models.UsuarioResposta = Depends(util.get_current_user)):
-    ressult = []
-
-    rotaDB = util.findExistedRoute(rota_id)
+    routeDB = util.findExistedRoute(rota_id)
     
-    if not rotaDB:
+    if not routeDB:
         raise HTTPException(status_code=404, detail="Operation failed. Route not found!")
 
     sellerDB = util.findExistedSellerById(vendedor_id)
@@ -151,6 +156,8 @@ def desassociar_vendedor_rota(rota_id: int, vendedor_id: int, current_user: mode
 
     except:
         raise HTTPException(status_code=404, detail=("Operation failed! Not desassociated seller"))
+
+    util.create_log("Desassociação Vendedor", "rota", current_user.id , current_user.email, routeDB[0].get('nome'))
 
     return {
         "Successful operation. Seller desassociated with route!"

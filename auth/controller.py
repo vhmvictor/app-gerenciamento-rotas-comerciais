@@ -37,6 +37,8 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
         expires_delta=access_token_expires,
     )
 
+    util.create_log("Login", "login", int(userDB[0].get('id')), userDB[0].get('email'), "")
+
     results = {
         "access_token": access_token,
         "token_type": "bearer",
@@ -49,7 +51,6 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
 # Endponit Listar usuários
 @router.get("/usuarios", tags=["Usuarios"])
 def listar_usuarios():
-    ressult = []
     items = []
 
     cur = connection_db.cur
@@ -63,7 +64,7 @@ def listar_usuarios():
     return items
   
 @router.post("/usuarios", tags=["Usuarios"])
-def criar_usuario(usuario: models.Usuario):
+def criar_usuario(usuario: models.Usuario, current_user: models.UsuarioResposta = Depends(util.get_current_user)):
     userDB = util.findExistedUser(usuario.email)
     if userDB:
         raise HTTPException(status_code=400, detail="User email already exist!")
@@ -72,10 +73,12 @@ def criar_usuario(usuario: models.Usuario):
     conn = connection_db.conn
 
     gDate = datetime.now()
-
+    
     cur.execute("INSERT INTO usuario (email, senha, nome, is_adm, status, data_criacao) VALUES(%s, %s, %s, %s, %s, %s)", (
         usuario.email, util.hashed_password(usuario.senha), usuario.nome, usuario.is_adm, usuario.status, gDate))
     conn.commit()
+
+    util.create_log("Criação", "usuario", current_user.id , current_user.email, usuario.email)
 
     return {
         **usuario.dict(),
