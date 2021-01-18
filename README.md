@@ -1,5 +1,49 @@
 # Desafio Stone API
 
+## Como executar o projeto ?
+
+#
+Clone este repositório
+```shell
+$ git clone git@github.com:vhmvcitor/desafio-stone
+```
+
+Acesse a pasta do projeto no terminal/cmd
+```shell
+$ cd/desafio-stone
+```
+
+Crie um arquivo .env e insira as suas credênciais, como mostra o exemplo abaixo
+```shell
+# CREDENCIAIS BANCO DE DADOS - Psycopg2
+
+DB_NAME= “db_name”
+DB_USER= “db_user”
+DB_PASS= “db_password”
+DB_HOST= “db_host”
+DB_PORT= “db_password”
+PORT= “db_port”
+
+# CREDENCIAIS TOKEN JWT
+
+SECRET_KET=“jwt_secret_key”
+ALGORITHM=“jwt_algorithm”
+ACCESS_TOKEN_EXPIRE_MINUTES=“jwt_token_exíre_minutes”
+
+```
+
+Instale as dependências: Executar comando de Build do Docker
+```shell
+$ docker build . -t desafio-stone
+```
+
+Execute a aplicação: Run do Docker
+```shell
+$ docker run -it -p 8080:8080 --env-file .env -t desafio-stone
+```
+
+## Arquivo main - API:
+
 Arquivo principal da REST API. Aqui é feito o redirecionamento das principais rotas através do "FastAPI"
 ```py
 import os
