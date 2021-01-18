@@ -1,4 +1,4 @@
-import folium, json, os
+import folium, os
 from db import connection_db
 
 route_bounds = []
