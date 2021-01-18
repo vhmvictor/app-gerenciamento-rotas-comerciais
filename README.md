@@ -97,6 +97,11 @@ app.include_router(logController.router)
 - create_log():
     Função utilizada para motoriramento de alterações realizadas no sistema, como cadastro/edição/exclusão de dados.
 
+## Visualização das rotas e clientes cadastrados:
+Implementei um script ("map.py") que faz a busca de todas as rotas e clientes cadastrados no banco e faz a plotagem de suas geolocalizações no mapa gerando o arquivo "map.html", localizado na pasta "map". Utilizei a biblioteca "folium" para executar essa função. Abaixo coloquei uma demonstração das rotas e clientes cadastrados
+
+![alt text](/map/rotas.png)
+
 # Entidades:
 
 Lista com todas as entidades/tables que compõem a REST API

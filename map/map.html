@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e5f30965b96249a4817fd7c1920a2fc1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_e5f30965b96249a4817fd7c1920a2fc1" ></div>
+        
+</body>
+<script>    
+    
+            var map_e5f30965b96249a4817fd7c1920a2fc1 = L.map(
+                "map_e5f30965b96249a4817fd7c1920a2fc1",
+                {
+                    center: [-16.712164696208113, -49.28449630737305],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_557c6ae1efc14b84beb8107072157276 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        
+    
+
+        function geo_json_7842192de595491397cfa541e6da3d00_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_7842192de595491397cfa541e6da3d00 = L.geoJson(null, {
+                onEachFeature: geo_json_7842192de595491397cfa541e6da3d00_onEachFeature,
+            
+        });
+
+        function geo_json_7842192de595491397cfa541e6da3d00_add (data) {
+            geo_json_7842192de595491397cfa541e6da3d00
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_7842192de595491397cfa541e6da3d00_add({"geometry": {"coordinates": [[]], "type": "Polygon"}, "properties": {"name": "Outros"}, "type": "Feature"});
+
+        
+    
+            geo_json_7842192de595491397cfa541e6da3d00.bindTooltip(
+                `<div>
+                     Outros
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_b29cb8a4077143eb997045659184f326_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_b29cb8a4077143eb997045659184f326 = L.geoJson(null, {
+                onEachFeature: geo_json_b29cb8a4077143eb997045659184f326_onEachFeature,
+            
+        });
+
+        function geo_json_b29cb8a4077143eb997045659184f326_add (data) {
+            geo_json_b29cb8a4077143eb997045659184f326
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_b29cb8a4077143eb997045659184f326_add({"geometry": {"coordinates": [[[-49.31058883666992, -16.704437239159116], [-49.32088851928711, -16.709534107654456], [-49.31985855102539, -16.716603732162383], [-49.314022064208984, -16.72054945519059], [-49.30131912231445, -16.724330696497493], [-49.29342269897461, -16.71939862773847], [-49.292049407958984, -16.71232910678873], [-49.293999999999, -16.705996583591286], [-49.31058883666992, -16.704437239159116]]], "type": "Polygon"}, "properties": {"name": "Vila Uni\u00e3o"}, "type": "Feature"});
+
+        
+    
+            geo_json_b29cb8a4077143eb997045659184f326.bindTooltip(
+                `<div>
+                     Vila União
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_bd32ef73f5e149e9948fe51c39b647f2_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_bd32ef73f5e149e9948fe51c39b647f2 = L.geoJson(null, {
+                onEachFeature: geo_json_bd32ef73f5e149e9948fe51c39b647f2_onEachFeature,
+            
+        });
+
+        function geo_json_bd32ef73f5e149e9948fe51c39b647f2_add (data) {
+            geo_json_bd32ef73f5e149e9948fe51c39b647f2
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_bd32ef73f5e149e9948fe51c39b647f2_add({"geometry": {"coordinates": [[[-49.27496910095215, -16.683390664298805], [-49.27891731262207, -16.686268262511895], [-49.283037185668945, -16.68914581740434], [-49.28492546081543, -16.69087232954314], [-49.28286552429199, -16.694243093997365], [-49.28097724914551, -16.70016234130687], [-49.27968978881836, -16.700984444480216], [-49.27831649780273, -16.70361515085119], [-49.276857376098626, -16.70616361308363], [-49.27599906921387, -16.7078077642116], [-49.27187919616699, -16.708301006788517], [-49.267845153808594, -16.70698569041774], [-49.26363945007324, -16.7056703649839], [-49.26166534423828, -16.70386177771524], [-49.26072120666504, -16.700573393335922], [-49.25926208496093, -16.695887347760515], [-49.25823211669922, -16.6892280326218], [-49.261322021484375, -16.686268262511895], [-49.26647186279297, -16.684212839636928], [-49.27162170410156, -16.68306179317352], [-49.27496910095215, -16.683390664298805]]], "type": "Polygon"}, "properties": {"name": "Setor Bueno"}, "type": "Feature"});
+
+        
+    
+            geo_json_bd32ef73f5e149e9948fe51c39b647f2.bindTooltip(
+                `<div>
+                     Setor Bueno
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_317e039ffdd446858cfd8b1cd5ca2c45_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_317e039ffdd446858cfd8b1cd5ca2c45 = L.geoJson(null, {
+                onEachFeature: geo_json_317e039ffdd446858cfd8b1cd5ca2c45_onEachFeature,
+            
+        });
+
+        function geo_json_317e039ffdd446858cfd8b1cd5ca2c45_add (data) {
+            geo_json_317e039ffdd446858cfd8b1cd5ca2c45
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_317e039ffdd446858cfd8b1cd5ca2c45_add({"geometry": {"coordinates": [[[-49.307498931884766, -16.68815923203611], [-49.31093215942383, -16.69522964795351], [-49.309558868408196, -16.704108404260715], [-49.29840087890625, -16.704930490444795], [-49.2875862121582, -16.702628640209362], [-49.28277969360351, -16.69539407311755], [-49.29136276245117, -16.685199445375137], [-49.29840087890625, -16.683226228806877], [-49.307498931884766, -16.68815923203611]]], "type": "Polygon"}, "properties": {"name": "Sudoeste"}, "type": "Feature"});
+
+        
+    
+            geo_json_317e039ffdd446858cfd8b1cd5ca2c45.bindTooltip(
+                `<div>
+                     Sudoeste
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_0578914ca3e34c29aebaa1244da55822_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_0578914ca3e34c29aebaa1244da55822 = L.geoJson(null, {
+                onEachFeature: geo_json_0578914ca3e34c29aebaa1244da55822_onEachFeature,
+            
+        });
+
+        function geo_json_0578914ca3e34c29aebaa1244da55822_add (data) {
+            geo_json_0578914ca3e34c29aebaa1244da55822
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_0578914ca3e34c29aebaa1244da55822_add({"geometry": {"coordinates": [[[-49.291534423828125, -16.718987616251404], [-49.29616928100586, -16.723097691265785], [-49.29642677307128, -16.72778306872881], [-49.28664207458496, -16.73361907960675], [-49.27831649780273, -16.736413725761974], [-49.26741600036621, -16.735838360786456], [-49.2641544342041, -16.72959142923318], [-49.26398277282715, -16.721864678061696], [-49.274024963378906, -16.71701474878583], [-49.27908897399902, -16.717507967565055], [-49.291534423828125, -16.718987616251404]]], "type": "Polygon"}, "properties": {"name": "Parque Amazonia"}, "type": "Feature"});
+
+        
+    
+            geo_json_0578914ca3e34c29aebaa1244da55822.bindTooltip(
+                `<div>
+                     Parque Amazonia
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_ad0ef90106b343e2a05857448c75cf7a_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ad0ef90106b343e2a05857448c75cf7a = L.geoJson(null, {
+                onEachFeature: geo_json_ad0ef90106b343e2a05857448c75cf7a_onEachFeature,
+            
+        });
+
+        function geo_json_ad0ef90106b343e2a05857448c75cf7a_add (data) {
+            geo_json_ad0ef90106b343e2a05857448c75cf7a
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_ad0ef90106b343e2a05857448c75cf7a_add({"geometry": {"coordinates": [[[-49.29290771484375, -16.705012698868522], [-49.2919635772705, -16.70994513950608], [-49.29136276245117, -16.713726591004885], [-49.29187774658203, -16.71619271465342], [-49.292049407958984, -16.718001185069085], [-49.28492546081543, -16.717261358334838], [-49.27814483642578, -16.71685034224271], [-49.27711486816406, -16.71052058261123], [-49.27865982055663, -16.70558815684337], [-49.2832088470459, -16.700491183000885], [-49.287071228027344, -16.7035329418257], [-49.29290771484375, -16.705012698868522]]], "type": "Polygon"}, "properties": {"name": "Jardim Am\u00e9rica"}, "type": "Feature"});
+
+        
+    
+            geo_json_ad0ef90106b343e2a05857448c75cf7a.bindTooltip(
+                `<div>
+                     Jardim América
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_4e2ea2839970477cbbdec4688cf227d3_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_4e2ea2839970477cbbdec4688cf227d3 = L.geoJson(null, {
+                onEachFeature: geo_json_4e2ea2839970477cbbdec4688cf227d3_onEachFeature,
+            
+        });
+
+        function geo_json_4e2ea2839970477cbbdec4688cf227d3_add (data) {
+            geo_json_4e2ea2839970477cbbdec4688cf227d3
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_4e2ea2839970477cbbdec4688cf227d3_add({"geometry": {"coordinates": [-49.30088996887207, -16.69835370186849], "type": "Point"}, "properties": {"name": "loja sudoeste 3"}, "type": "Feature"});
+
+        
+    
+            geo_json_4e2ea2839970477cbbdec4688cf227d3.bindTooltip(
+                `<div>
+                     loja sudoeste 3
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_957d99bd5b31480d9ae0a7621079b212_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_957d99bd5b31480d9ae0a7621079b212 = L.geoJson(null, {
+                onEachFeature: geo_json_957d99bd5b31480d9ae0a7621079b212_onEachFeature,
+            
+        });
+
+        function geo_json_957d99bd5b31480d9ae0a7621079b212_add (data) {
+            geo_json_957d99bd5b31480d9ae0a7621079b212
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_957d99bd5b31480d9ae0a7621079b212_add({"geometry": {"coordinates": [-49.2971134185791, -16.69309210794294], "type": "Point"}, "properties": {"name": "loja sudoeste 4"}, "type": "Feature"});
+
+        
+    
+            geo_json_957d99bd5b31480d9ae0a7621079b212.bindTooltip(
+                `<div>
+                     loja sudoeste 4
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_93858b6384fe41658af214eef407cd05_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_93858b6384fe41658af214eef407cd05 = L.geoJson(null, {
+                onEachFeature: geo_json_93858b6384fe41658af214eef407cd05_onEachFeature,
+            
+        });
+
+        function geo_json_93858b6384fe41658af214eef407cd05_add (data) {
+            geo_json_93858b6384fe41658af214eef407cd05
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_93858b6384fe41658af214eef407cd05_add({"geometry": {"coordinates": [-49.30088996887207, -16.690296827230053], "type": "Point"}, "properties": {"name": "loja sudoeste"}, "type": "Feature"});
+
+        
+    
+            geo_json_93858b6384fe41658af214eef407cd05.bindTooltip(
+                `<div>
+                     loja sudoeste
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_85a747ff682e45e2aa3b186c45663fc5_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_85a747ff682e45e2aa3b186c45663fc5 = L.geoJson(null, {
+                onEachFeature: geo_json_85a747ff682e45e2aa3b186c45663fc5_onEachFeature,
+            
+        });
+
+        function geo_json_85a747ff682e45e2aa3b186c45663fc5_add (data) {
+            geo_json_85a747ff682e45e2aa3b186c45663fc5
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_85a747ff682e45e2aa3b186c45663fc5_add({"geometry": {"coordinates": [-49.30440902709961, -16.717343561447013], "type": "Point"}, "properties": {"name": "loja vila uniao"}, "type": "Feature"});
+
+        
+    
+            geo_json_85a747ff682e45e2aa3b186c45663fc5.bindTooltip(
+                `<div>
+                     loja vila uniao
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_b98da2822eeb4a6c821e6580b88f5530_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_b98da2822eeb4a6c821e6580b88f5530 = L.geoJson(null, {
+                onEachFeature: geo_json_b98da2822eeb4a6c821e6580b88f5530_onEachFeature,
+            
+        });
+
+        function geo_json_b98da2822eeb4a6c821e6580b88f5530_add (data) {
+            geo_json_b98da2822eeb4a6c821e6580b88f5530
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_b98da2822eeb4a6c821e6580b88f5530_add({"geometry": {"coordinates": [-49.313249588012695, -16.7106849946083], "type": "Point"}, "properties": {"name": "loja vila uniao 2 "}, "type": "Feature"});
+
+        
+    
+            geo_json_b98da2822eeb4a6c821e6580b88f5530.bindTooltip(
+                `<div>
+                     loja vila uniao 2 
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_a749132b1f1d4e66a8f7aeb5068172e8_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a749132b1f1d4e66a8f7aeb5068172e8 = L.geoJson(null, {
+                onEachFeature: geo_json_a749132b1f1d4e66a8f7aeb5068172e8_onEachFeature,
+            
+        });
+
+        function geo_json_a749132b1f1d4e66a8f7aeb5068172e8_add (data) {
+            geo_json_a749132b1f1d4e66a8f7aeb5068172e8
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_a749132b1f1d4e66a8f7aeb5068172e8_add({"geometry": {"coordinates": [-49.2996883392334, -16.7113426411802], "type": "Point"}, "properties": {"name": "loja vila uniao 3"}, "type": "Feature"});
+
+        
+    
+            geo_json_a749132b1f1d4e66a8f7aeb5068172e8.bindTooltip(
+                `<div>
+                     loja vila uniao 3
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_4453256f126140d799c1414540e83606_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_4453256f126140d799c1414540e83606 = L.geoJson(null, {
+                onEachFeature: geo_json_4453256f126140d799c1414540e83606_onEachFeature,
+            
+        });
+
+        function geo_json_4453256f126140d799c1414540e83606_add (data) {
+            geo_json_4453256f126140d799c1414540e83606
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_4453256f126140d799c1414540e83606_add({"geometry": {"coordinates": [-49.273338317871094, -16.688570309891823], "type": "Point"}, "properties": {"name": "loja setor bueno"}, "type": "Feature"});
+
+        
+    
+            geo_json_4453256f126140d799c1414540e83606.bindTooltip(
+                `<div>
+                     loja setor bueno
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_720119a28c7c48d692d0597a778fed6d_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_720119a28c7c48d692d0597a778fed6d = L.geoJson(null, {
+                onEachFeature: geo_json_720119a28c7c48d692d0597a778fed6d_onEachFeature,
+            
+        });
+
+        function geo_json_720119a28c7c48d692d0597a778fed6d_add (data) {
+            geo_json_720119a28c7c48d692d0597a778fed6d
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_720119a28c7c48d692d0597a778fed6d_add({"geometry": {"coordinates": [-49.27651405334472, -16.69333874839548], "type": "Point"}, "properties": {"name": "loja setor bueno 2"}, "type": "Feature"});
+
+        
+    
+            geo_json_720119a28c7c48d692d0597a778fed6d.bindTooltip(
+                `<div>
+                     loja setor bueno 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_d2e00b0aceca434bad97fc9b722c0fc5_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_d2e00b0aceca434bad97fc9b722c0fc5 = L.geoJson(null, {
+                onEachFeature: geo_json_d2e00b0aceca434bad97fc9b722c0fc5_onEachFeature,
+            
+        });
+
+        function geo_json_d2e00b0aceca434bad97fc9b722c0fc5_add (data) {
+            geo_json_d2e00b0aceca434bad97fc9b722c0fc5
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_d2e00b0aceca434bad97fc9b722c0fc5_add({"geometry": {"coordinates": [-49.287071228027344, -16.719809638339907], "type": "Point"}, "properties": {"name": "loja parque amazonia"}, "type": "Feature"});
+
+        
+    
+            geo_json_d2e00b0aceca434bad97fc9b722c0fc5.bindTooltip(
+                `<div>
+                     loja parque amazonia
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_ecafe008463b407dba1c9535e044e012_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ecafe008463b407dba1c9535e044e012 = L.geoJson(null, {
+                onEachFeature: geo_json_ecafe008463b407dba1c9535e044e012_onEachFeature,
+            
+        });
+
+        function geo_json_ecafe008463b407dba1c9535e044e012_add (data) {
+            geo_json_ecafe008463b407dba1c9535e044e012
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_ecafe008463b407dba1c9535e044e012_add({"geometry": {"coordinates": [-49.281578063964844, -16.724412896562786], "type": "Point"}, "properties": {"name": "loja parque amazonia 2"}, "type": "Feature"});
+
+        
+    
+            geo_json_ecafe008463b407dba1c9535e044e012.bindTooltip(
+                `<div>
+                     loja parque amazonia 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_3fbcfe34585546a8bf1dfc1f5b960f14_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_3fbcfe34585546a8bf1dfc1f5b960f14 = L.geoJson(null, {
+                onEachFeature: geo_json_3fbcfe34585546a8bf1dfc1f5b960f14_onEachFeature,
+            
+        });
+
+        function geo_json_3fbcfe34585546a8bf1dfc1f5b960f14_add (data) {
+            geo_json_3fbcfe34585546a8bf1dfc1f5b960f14
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_3fbcfe34585546a8bf1dfc1f5b960f14_add({"geometry": {"coordinates": [-49.27076339721679, -16.724906096210493], "type": "Point"}, "properties": {"name": "loja parque amazonia 3"}, "type": "Feature"});
+
+        
+    
+            geo_json_3fbcfe34585546a8bf1dfc1f5b960f14.bindTooltip(
+                `<div>
+                     loja parque amazonia 3
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_3765a92ac62b4745adc2025174d244d6_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_3765a92ac62b4745adc2025174d244d6 = L.geoJson(null, {
+                onEachFeature: geo_json_3765a92ac62b4745adc2025174d244d6_onEachFeature,
+            
+        });
+
+        function geo_json_3765a92ac62b4745adc2025174d244d6_add (data) {
+            geo_json_3765a92ac62b4745adc2025174d244d6
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_3765a92ac62b4745adc2025174d244d6_add({"geometry": {"coordinates": [-49.28363800048828, -16.73156416658138], "type": "Point"}, "properties": {"name": "loja parque amazonia 4"}, "type": "Feature"});
+
+        
+    
+            geo_json_3765a92ac62b4745adc2025174d244d6.bindTooltip(
+                `<div>
+                     loja parque amazonia 4
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_287bcd4d1a2d45e1afcaa0a6fca00c07_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_287bcd4d1a2d45e1afcaa0a6fca00c07 = L.geoJson(null, {
+                onEachFeature: geo_json_287bcd4d1a2d45e1afcaa0a6fca00c07_onEachFeature,
+            
+        });
+
+        function geo_json_287bcd4d1a2d45e1afcaa0a6fca00c07_add (data) {
+            geo_json_287bcd4d1a2d45e1afcaa0a6fca00c07
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_287bcd4d1a2d45e1afcaa0a6fca00c07_add({"geometry": {"coordinates": [-49.29016113281249, -16.69531186055323], "type": "Point"}, "properties": {"name": "loja sudoeste 2"}, "type": "Feature"});
+
+        
+    
+            geo_json_287bcd4d1a2d45e1afcaa0a6fca00c07.bindTooltip(
+                `<div>
+                     loja sudoeste 2
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_13d47443df204406bb55b8485644f539_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_13d47443df204406bb55b8485644f539 = L.geoJson(null, {
+                onEachFeature: geo_json_13d47443df204406bb55b8485644f539_onEachFeature,
+            
+        });
+
+        function geo_json_13d47443df204406bb55b8485644f539_add (data) {
+            geo_json_13d47443df204406bb55b8485644f539
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_13d47443df204406bb55b8485644f539_add({"geometry": {"coordinates": [-49.26767349243164, -16.693914241546512], "type": "Point"}, "properties": {"name": "loja bueno 3"}, "type": "Feature"});
+
+        
+    
+            geo_json_13d47443df204406bb55b8485644f539.bindTooltip(
+                `<div>
+                     loja bueno 3
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+
+        function geo_json_683c60e31bc04c34b68906df65c07f78_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_683c60e31bc04c34b68906df65c07f78 = L.geoJson(null, {
+                onEachFeature: geo_json_683c60e31bc04c34b68906df65c07f78_onEachFeature,
+            
+        });
+
+        function geo_json_683c60e31bc04c34b68906df65c07f78_add (data) {
+            geo_json_683c60e31bc04c34b68906df65c07f78
+                .addData(data)
+                .addTo(map_e5f30965b96249a4817fd7c1920a2fc1);
+        }
+            geo_json_683c60e31bc04c34b68906df65c07f78_add({"geometry": {"coordinates": [-49.28449630737305, -16.710191758192174], "type": "Point"}, "properties": {"name": "loja jardim am\u00e9rica"}, "type": "Feature"});
+
+        
+    
+            geo_json_683c60e31bc04c34b68906df65c07f78.bindTooltip(
+                `<div>
+                     loja jardim américa
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>

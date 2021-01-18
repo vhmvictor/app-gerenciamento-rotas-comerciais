@@ -47,4 +47,4 @@ for row in route_bounds:
 for row in client_coord:
     folium.GeoJson(row, tooltip=row.get('properties').get('name')).add_to(m)
 
-m.save("map.html")
+m.save("map/map.html")
