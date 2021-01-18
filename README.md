@@ -42,6 +42,8 @@ Execute a aplicação: Run do Docker
 $ docker run -it -p 8080:8080 --env-file .env -t desafio-stone
 ```
 
+Fiz o deploy da aplicação na plataforma do Heroku. Também instânciei um BD de testes na mesma plataforma. Segue url da RESTAPI: "https://api-desafio-stone.herokuapp.com/docs" 
+
 ## Arquivo main - API:
 
 Arquivo principal da REST API. Aqui é feito o redirecionamento das principais rotas através do "FastAPI"
