@@ -92,10 +92,10 @@ def findRouteIntersection(bounds: list, bounds_id: list):
                         is_intersect = True
                 except:
                     raise HTTPException(status_code=400, detail="Operation failed. Invalid coordinate!")
+    # Create Route
     else:
-        # Create Route
         cur = connection_db.cur
-        query = "select bounds from rota"
+        query = "select bounds from rota where data_deletacao is null"
         cur.execute(query)
         result = cur.fetchall()
         for row in result:
