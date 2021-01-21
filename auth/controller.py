@@ -29,7 +29,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
     user = models.UsuarioSenha(**userDB[0])
     authorized = util.verify_password(form_data.password, user.senha)
     if not authorized:
-        raise HTTPException(status_code=404, detail="E-mail or password invalid!")
+        raise HTTPException(status_code=400, detail="E-mail or password invalid!")
 
     access_token_expires = util.timedelta(minutes=int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")))
     access_token = util.create_access_token(
@@ -42,7 +42,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
     results = {
         "access_token": access_token,
         "token_type": "bearer",
-        "expired_in": int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))*120,
+        "expired_in": int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))*60,
         "user_info": user
     }
 

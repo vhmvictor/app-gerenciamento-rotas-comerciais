@@ -181,7 +181,7 @@ def deletar_cliente(id: int):
 
     conn.commit()
 
-    #util.create_log("Deletacão", "cliente", None, None, clientDB[0].get('nome'))
+    util.create_log("Deletacão", "cliente", None, None, clientDB[0].get('nome'))
 
     return {
         "Successful operation. Delete client!"

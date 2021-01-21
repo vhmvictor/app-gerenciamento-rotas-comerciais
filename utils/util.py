@@ -207,8 +207,6 @@ def create_log(acao, entidade, usuario_id, usuario_nome, registro):
         acao, entidade, usuario_id, usuario_nome, registro, gDate))
     conn.commit()
 
-    print("Log criado")
-
 # UTILS FUNCTIONS 
 def hashed_password(password):
     return pwd_bcrypt.hash(password)
