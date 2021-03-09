@@ -1,4 +1,4 @@
-# Desafio Stone API
+# Gerenciamento de Rotas Comerciais - API (FASTAPI)
 
 ## Como executar o projeto ?
 
